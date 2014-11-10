@@ -17,3 +17,6 @@ RUN apt-get install -y ipython-notebook
 RUN apt-get install -y python-nose
 RUN apt-get install -y python-pandas
 RUN apt-get install -y python-sympy
+
+CMD ["ipython", "notebook", "--ip=*", "--pylab=inline", "--no-browser"]
+EXPOSE 8888
