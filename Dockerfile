@@ -17,6 +17,13 @@ RUN apt-get install -y python-nose
 RUN apt-get install -y python-pandas
 RUN apt-get install -y python-sympy
 
+WORKDIR /opt/src
+RUN git clone https://github.com/damianavila/live_reveal.git
+WORKDIR /opt/src/live_reveal
+USER root
+RUN python setup.py install
+RUN python3 setup.py install
+
 ENV PASSWORD science
 
 CMD ["/notebook.sh"]
