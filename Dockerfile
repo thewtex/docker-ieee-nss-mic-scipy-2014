@@ -31,5 +31,6 @@ RUN apt-get install -y python-lxml
 RUN pip install xdress
 
 ENV PASSWORD science
+WORKDIR /notebooks
 
 CMD ["/notebook.sh"]
